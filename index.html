@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>СИГНАЛ — 3D-история о появлении ИИ</title>
+<link rel="stylesheet" href="./css/style.css" />
+<script type="importmap">
+{
+  "imports": {
+    "three": "./vendor/three/three.module.js",
+    "three/addons/": "./vendor/three/addons/"
+  }
+}
+</script>
+</head>
+<body>
+<div id="app">
+  <canvas id="scene"></canvas>
+
+  <!-- HUD -->
+  <header class="hud" id="hud">
+    <div class="brand">
+      <div class="brand-title">СИГНАЛ</div>
+      <div class="brand-sub">история о том, как ИИ вошёл в нашу жизнь</div>
+    </div>
+    <div class="progress">
+      <div class="progress-num"><span id="pcount">0</span><span class="dim"> / 6</span></div>
+      <div class="dots" id="dots"></div>
+    </div>
+  </header>
+
+  <div class="hint" id="hint">WASD — идти · мышь — камера · E — включить</div>
+
+  <div class="prompt" id="prompt">
+    <span class="key">E</span>
+    <span class="prompt-text">включить</span>
+  </div>
+
+  <article class="caption" id="caption">
+    <div class="cap-year" id="cap-year"></div>
+    <div class="cap-title" id="cap-title"></div>
+    <div class="cap-text" id="cap-text"></div>
+  </article>
+
+  <div class="vignette"></div>
+
+  <!-- touch controls -->
+  <div class="stick" id="stick"><div class="knob" id="knob"></div></div>
+  <button class="act" id="act" aria-label="включить">E</button>
+
+  <!-- START -->
+  <section class="screen" id="start">
+    <div class="screen-inner">
+      <div class="kicker">интерактивная 3D-история</div>
+      <h1 class="title">СИГНАЛ</h1>
+      <p class="lead">Шесть фрагментов того, как искусственный интеллект тихо вошёл в жизнь людей.
+        Найди их в городе и включи — и посмотри, что получится.</p>
+      <button class="btn" id="btn-start">ВОЙТИ В ГОРОД</button>
+      <div class="meta">6 фрагментов · около 3 минут · звук включён</div>
+    </div>
+  </section>
+
+  <!-- END -->
+  <section class="screen hidden" id="end">
+    <div class="screen-inner">
+      <div class="kicker">6 из 6</div>
+      <h1 class="title small">СИГНАЛ</h1>
+      <p class="lead">ИИ не появился однажды. Он появлялся каждый день —
+        в шахматах, в кармане, на улице, в дороге, на работе. И в конце концов стал воздухом.</p>
+      <button class="btn" id="btn-again">ПРОЙТИ СНОВА</button>
+    </div>
+  </section>
+
+  <div class="loading" id="loading">собираем город…</div>
+</div>
+
+<script type="module" src="./js/main.js"></script>
+</body>
+</html>
